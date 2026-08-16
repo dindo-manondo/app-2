@@ -13,11 +13,16 @@
 standardPipeline(
     sonarProjectKey: 'app-2',
     nodeJsToolName: 'NodeJS',
+    // Windows note: npm is itself a .cmd batch script. Calling it without
+    // 'call' inside another batch script transfers control into it and
+    // never returns - the lines after the first npm invocation would
+    // silently never run. Always prefix with 'call' for multi-command
+    // buildCommand blocks on Windows agents.
     buildCommand: '''
-        npm install
-        npm run lint
-        npm test
-        npm run build
+        call npm install
+        call npm run lint
+        call npm test
+        call npm run build
     ''',
     sonarScannerToolName: 'sonar-scanner',
     sonarScanCommand: '"%SONAR_SCANNER_HOME%\\bin\\sonar-scanner.bat" -Dsonar.projectKey=app-2 -Dsonar.sources=.',
