@@ -1,0 +1,12 @@
+{
+  "name": "app-2",
+  "version": "1.0.0",
+  "description": "App 2 - Node.js demo app illustrating standardPipeline's multi-command Build stage",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node -e \"console.log('Linting... OK')\"",
+    "test": "node test/app.test.js",
+    "build": "node -e \"console.log('Building... OK')\""
+  },
+  "license": "UNLICENSED"
+}
