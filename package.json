@@ -1,7 +1,7 @@
 {
-  "name": "app-2",
+  "name": "app-node",
   "version": "1.0.0",
-  "description": "App 2 - Node.js demo app illustrating standardPipeline's multi-command Build stage",
+  "description": "App Node - Node.js demo app illustrating standardPipeline's multi-command Build stage",
   "main": "index.js",
   "scripts": {
     "lint": "node -e \"console.log('Linting... OK')\"",
