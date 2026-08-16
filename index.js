@@ -2,6 +2,6 @@ function add(a, b) {
   return a + b;
 }
 
-console.log('app-2 says hello');
+console.log('app-node says hello');
 
 module.exports = { add };
