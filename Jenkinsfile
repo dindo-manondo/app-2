@@ -35,5 +35,6 @@ standardPipeline(
     deploySteps: { deployEnv ->
         echo "Would deploy to environment: ${deployEnv}"
         bat "podman build -t app-node:${deployEnv} ."
-    }
+    },
+    trivyImage: { deployEnv -> "app-node:${deployEnv}" }
 )
