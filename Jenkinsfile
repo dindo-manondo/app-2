@@ -33,8 +33,7 @@ standardPipeline(
     ],
     defaultEnv: 'dev',
     deploySteps: { deployEnv ->
-        echo "Would deploy to environment: ${deployEnv}"
-        bat "podman build -t app-node:${deployEnv} ."
+        echo "Would deploy to environment: ${deployEnv} (image pulled from Nexus)"
     },
-    trivyImage: { deployEnv -> "app-node:${deployEnv}" }
+    dockerImage: { deployEnv -> "app-node:${deployEnv}" }
 )
